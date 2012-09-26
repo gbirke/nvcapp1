@@ -1,15 +1,17 @@
 parameters:
-    database_driver:   pdo_mysql
-    database_host:     localhost
-    database_port:     ~
-    database_name:     symfony
-    database_user:     root
-    database_password: ~
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_port: null
+    database_name: nvcapp_dev
+    database_user: webuser
+    database_password: null
 
-    mailer_transport:  smtp
-    mailer_host:       localhost
-    mailer_user:       ~
-    mailer_password:   ~
+    mailer_transport: smtp
+    mailer_host: localhost
+    mailer_user: null
+    mailer_password: null
 
-    locale:            en
-    secret:            ThisTokenIsNotSoSecretChangeIt
+    locale: en
+    secret: de1cdc1186d5a2f7418c9f3a9ebcc3d10
+    database_path: null
+
