@@ -1,0 +1,7 @@
+parameters:
+#    birke_nvc.example.class: Birke\NvcBundle\Example
+
+services:
+#    birke_nvc.example:
+#        class: %birke_nvc.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
