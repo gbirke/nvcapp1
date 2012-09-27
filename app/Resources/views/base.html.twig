@@ -3,11 +3,58 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            {% stylesheets
+                'css/bootstrap.min.css'
+                'css/bootstrap-responsive.min.css'
+            %}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+            <style>
+              body {
+                padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+              }
+            </style>
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block nav %}
+       <div class="navbar navbar-inverse navbar-fixed-top">
+           <div class="navbar-inner">
+            <div class="container">
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </a>
+              <a class="brand" href="#">Project name</a>
+              <div class="nav-collapse collapse">
+                <ul class="nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                </ul>
+              </div><!--/.nav-collapse -->
+            </div>
+          </div>
+        </div>
+    {% endblock %}
+    <div class="container">
+
+      {% block body %}{% endblock %}
+
+    </div> <!-- /container -->
+
+        {% block javascripts %}
+            {% javascripts
+                'js/vendors/jquery.min.js'
+                'js/vendors/underscore-min.js'
+                'js/vendors/backbone-min.js'
+                'js/vendors/plugins/*'
+                'js/vendors/ICanHaz.js'
+                'js/bootstrap.min.js'
+            %}<script type="text/javascript" src="{{ asset_url }}"></script>{% endjavascripts %}
+        {% endblock %}
     </body>
 </html>
