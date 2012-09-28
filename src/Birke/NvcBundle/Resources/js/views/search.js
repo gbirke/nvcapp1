@@ -5,7 +5,7 @@
         initialize: function() {
             this.$el.autocomplete({
                source: function(term, callback) {
-                   $.post('http://nvcapp.site/search', {q:term.term}, function(data) {
+                   $.post(Routing.generate('birke_nvc_search'), {q:term.term}, function(data) {
                        var result2map = function(result) {
                            return {value:result.id, label:result.name};
                        };
@@ -13,6 +13,7 @@
                    }, 'json');
                }
             });
+            //TODO: render needs and strategies differently
         }
     });
     var sv = new SearchView({el:$('#q')});
