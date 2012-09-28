@@ -12,4 +12,17 @@ use Doctrine\ORM\EntityRepository;
  */
 class NeedRepository extends EntityRepository
 {
+    /**
+     * @param string $name
+     * @param int $limit
+     * @return mixed
+     */
+    public function getLikeName($name, $limit=10){
+        $qb = $this->createQueryBuilder('n');
+        $qb->andWhere($qb->expr()->like('n.name', ':name'))
+            ->setMaxResults($limit)
+            ->setParameter('name', "%$name%")
+        ;
+        return $qb->getQuery()->execute();
+    }
 }

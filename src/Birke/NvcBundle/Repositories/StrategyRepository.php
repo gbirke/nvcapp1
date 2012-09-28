@@ -12,4 +12,19 @@ use Doctrine\ORM\EntityRepository;
  */
 class StrategyRepository extends EntityRepository
 {
+
+    /**
+     * @param string $name
+     * @param int $limit
+     * @return mixed
+     */
+    public function getLikeName($name, $limit=10){
+        $qb = $this->createQueryBuilder('s');
+        $qb->andWhere($qb->expr()->like('s.name', ':name'))
+            ->setMaxResults($limit)
+            ->setParameter('name', "%$name%")
+        ;
+        return $qb->getQuery()->execute();
+    }
+
 }

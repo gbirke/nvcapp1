@@ -2,11 +2,13 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}NVC App{% endblock %}</title>
         {% block stylesheets %}
             {% stylesheets
                 'css/bootstrap.min.css'
                 'css/bootstrap-responsive.min.css'
+                'css/jquery-ui-bootstrap/jquery-ui-1.8.16.custom.css'
+                filter='cssrewrite'
             %}
                 <link rel="stylesheet" href="{{ asset_url }}" />
             {% endstylesheets %}
@@ -48,12 +50,14 @@
 
         {% block javascripts %}
             {% javascripts
-                'js/vendors/jquery.min.js'
-                'js/vendors/underscore-min.js'
-                'js/vendors/backbone-min.js'
-                'js/vendors/plugins/*'
-                'js/vendors/ICanHaz.js'
+                'js/vendor/jquery.min.js'
+                'js/vendor/jquery-ui.min.js'
+                'js/vendor/underscore-min.js'
+                'js/vendor/backbone-min.js'
+                'js/vendor/plugins/*'
+                'js/vendor/ICanHaz.js'
                 'js/bootstrap.min.js'
+                '@BirkeNvcBundle/Resources/js/views/search.js'
             %}<script type="text/javascript" src="{{ asset_url }}"></script>{% endjavascripts %}
         {% endblock %}
     </body>
