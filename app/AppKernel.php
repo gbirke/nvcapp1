@@ -19,6 +19,11 @@ class AppKernel extends Kernel
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
+
+            // Vendor Bundles
+            new JMS\SerializerBundle\JMSSerializerBundle($this),
+
+            //My modules
             new Birke\NvcBundle\BirkeNvcBundle(),
         );
 
