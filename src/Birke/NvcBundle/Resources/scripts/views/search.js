@@ -1,9 +1,10 @@
 
-(function($) {
+define(['backbone', 'underscore', 'text!nvc/templates/search.html', 'jqueryui'], function(Backbone, _, tpl){
     var SearchView = Backbone.View.extend({
-        id:"q",
-        initialize: function() {
-            this.$el.autocomplete({
+        render: function() {
+            this.$el.html(tpl);
+
+            this.$('#q').autocomplete({
                source: function(term, callback) {
                    $.post(Routing.generate('birke_nvc_search'), {q:term.term}, function(data) {
                        var result2map = function(result) {
@@ -13,8 +14,10 @@
                    }, 'json');
                }
             });
+
+            console.log("rendering view", this.$el, tpl);
             //TODO: render needs and strategies differently
         }
     });
-    var sv = new SearchView({el:$('#q')});
-})(jQuery)
+    return SearchView;
+});

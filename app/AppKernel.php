@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             // Vendor Bundles
             new JMS\SerializerBundle\JMSSerializerBundle($this),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new Hearsay\RequireJSBundle\HearsayRequireJSBundle(),
 
             //My modules
             new Birke\NvcBundle\BirkeNvcBundle(),

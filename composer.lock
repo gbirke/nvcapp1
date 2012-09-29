@@ -1,5 +1,5 @@
 {
-    "hash": "00e296c5c536de70041cedbab289f7a8",
+    "hash": "754940d61f40f6645949b6169f4c124f",
     "packages": [
         {
             "name": "doctrine/common",
@@ -322,6 +322,62 @@
             "homepage": "http://friendsofsymfony.github.com",
             "keywords": [
                 "Js Routing"
+            ]
+        },
+        {
+            "name": "hearsay/require-js-bundle",
+            "version": "v0.2.0",
+            "target-dir": "Hearsay/RequireJSBundle",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/hearsayit/HearsayRequireJSBundle.git",
+                "reference": "v0.2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/hearsayit/HearsayRequireJSBundle/zipball/v0.2.0",
+                "reference": "v0.2.0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "symfony/config": ">=2.0",
+                "symfony/dependency-injection": ">=2.0",
+                "symfony/finder": ">=2.0",
+                "symfony/http-kernel": ">=2.0",
+                "symfony/templating": ">=2.0",
+                "symfony/translation": ">=2.0",
+                "symfony/yaml": ">=2.0",
+                "kriswallsmith/assetic": ">=1.0"
+            },
+            "require-dev": {
+                "symfony/http-foundation": ">=2.0"
+            },
+            "suggest": {
+                "symfony/assetic-bundle": "The Hearsay RequireJS bundle provides integration with the Symfony2 Assetic bundle."
+            },
+            "time": "2012-05-15 01:37:17",
+            "type": "symfony-bundle",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Hearsay\\RequireJSBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kevin Montag",
+                    "email": "kmontag@cs.stanford.edu"
+                }
+            ],
+            "description": "Hearsay RequireJS Bundle",
+            "keywords": [
+                "javascript",
+                "requirejs",
+                "require"
             ]
         },
         {

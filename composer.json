@@ -20,7 +20,9 @@
         "jms/di-extra-bundle": "1.1.*",
 
         "jms/serializer-bundle": "0.9.*",
-        "friendsofsymfony/jsrouting-bundle": "1.0.*"
+        "friendsofsymfony/jsrouting-bundle": "1.0.*",
+        "hearsay/require-js-bundle": "0.2.*"
+
     },
     "scripts": {
         "post-install-cmd": [

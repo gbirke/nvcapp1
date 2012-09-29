@@ -50,7 +50,7 @@
     $ = lib;
   };
 
-  // Runs Backbone.js in *noConflict* mode, returning the `Backbone` variable
+  // Runs Backbone.scripts in *noConflict* mode, returning the `Backbone` variable
   // to its previous owner. Returns a reference to this Backbone object.
   Backbone.noConflict = function() {
     root.Backbone = previousBackbone;

@@ -42,23 +42,40 @@
           </div>
         </div>
     {% endblock %}
-    <div class="container">
+    <div class="container" role="main" id="main">
 
       {% block body %}{% endblock %}
 
     </div> <!-- /container -->
 
         {% block javascripts %}
-            {% javascripts
-                'js/vendor/jquery.min.js'
-                'js/vendor/jquery-ui.min.js'
-                'js/vendor/underscore-min.js'
-                'js/vendor/backbone-min.js'
-                'js/vendor/plugins/*'
-                'js/vendor/ICanHaz.js'
-                'js/bootstrap.min.js'
-                '@BirkeNvcBundle/Resources/js/views/search.js'
-            %}<script type="text/javascript" src="{{ asset_url }}"></script>{% endjavascripts %}
+
+
+        {{ require_js_initialize() }}
+            <script type="text/javascript">
+
+                requirejs.config({
+                    paths: {
+                      jquery:"vendor/jquery",
+                      backbone:"vendor/backbone",
+                      underscore:"vendor/underscore",
+                      icanhaz:"vendor/ICanHaz",
+                      text:"vendor/text",
+                      jqueryui:"vendor/jquery-ui-min"
+                    },
+                    shim: {
+                        'underscore': {
+                            exports: '_'
+                        },
+                        'backbone': {
+                            deps: ['underscore', 'jquery'],
+                            exports: 'Backbone'
+                        },
+                        'jqueryui': ["jquery"]
+                    }
+                });
+                require(['main'])
+            </script>
             <script type="text/javascript" src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
             <script type="text/javascript" src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
         {% endblock %}
