@@ -15,8 +15,16 @@ define(['backbone', 'underscore', 'text!nvc/templates/search.html', 'jqueryui'],
                }
             });
 
+            //TODO: render needs and strategies differently (Search result directly below search field)
             console.log("rendering view", this.$el, tpl);
-            //TODO: render needs and strategies differently
+        },
+        events: {
+            "submit" : "handleSubmit"
+        },
+        handleSubmit: function(evt) {
+            evt.preventDefault();
+            // TODO: Check if valid entry was selected, if yes, switch to need/feeling view
+            console.log("Preventing normal formsubmit ...");
         }
     });
     return SearchView;
