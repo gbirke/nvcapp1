@@ -8,13 +8,20 @@ module.exports = function(grunt) {
         },
         compile: {
             files: {
-                "src/Birke/NvcBundle/Resources/public/js/ember-templates.js": "src/Birke/NvcBundle/Resources/scripts/templates/*.hbs"
+                "src/Birke/NvcBundle/Resources/public/js/ember-templates.js": [
+                    "src/Birke/NvcBundle/Resources/scripts/templates/**/*.hbs",
+                    "src/Birke/NvcBundle/Resources/scripts/templates/*.hbs"
+                 ]
+
             }
         }
     },
     watch: {
         templates: {
-            files: ["src/Birke/NvcBundle/Resources/scripts/templates/*.hbs"],
+            files: [
+                "src/Birke/NvcBundle/Resources/scripts/templates/**/*.hbs",
+                "src/Birke/NvcBundle/Resources/scripts/templates/*.hbs"
+            ],
             tasks: ['emberTemplates']
         }
     }
