@@ -1,1 +1,10 @@
-This is the index page
+
+Suche:      {{input type="search" value=search action="query"}}
+
+<ul id="result-list">
+    {{#each}}
+        <li>
+            {{name}}
+        </li>
+    {{/each}}
+</ul>
