@@ -48,34 +48,16 @@
 
     </div> <!-- /container -->
 
+        {% javascripts
+            'js/vendor/jquery/jquery.min.js'
+            'js/vendor/handlebars/handlebars.min.js'
+            'js/vendor/ember/ember.min.js'
+            'js/vendor/ember-data/ember-data.min.js'
+        %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+
         {% block javascripts %}
-
-
-        {{ require_js_initialize() }}
-            <script type="text/javascript">
-
-                requirejs.config({
-                    paths: {
-                      jquery:"vendor/jquery",
-                      backbone:"vendor/backbone",
-                      underscore:"vendor/underscore",
-                      icanhaz:"vendor/ICanHaz",
-                      text:"vendor/text",
-                      jqueryui:"vendor/jquery-ui-min"
-                    },
-                    shim: {
-                        'underscore': {
-                            exports: '_'
-                        },
-                        'backbone': {
-                            deps: ['underscore', 'jquery'],
-                            exports: 'Backbone'
-                        },
-                        'jqueryui': ["jquery"]
-                    }
-                });
-                require(['main'])
-            </script>
             <script type="text/javascript" src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
             <script type="text/javascript" src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
         {% endblock %}

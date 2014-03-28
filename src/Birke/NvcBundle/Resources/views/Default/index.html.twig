@@ -1,5 +1,18 @@
 {% extends "::base.html.twig" %}
 
+{% block javascripts %}
+    {{ parent() }}
+
+    {%  javascripts
+        '@BirkeNvcBundle/Resources/scripts/*.js'
+        '@BirkeNvcBundle/Resources/scripts/models/*.js'
+    %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+{% endblock %}
+
+
 {% block body %}
 
 {% endblock %}
