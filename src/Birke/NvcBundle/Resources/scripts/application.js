@@ -1,4 +1,6 @@
-var NVC = window.NVC = Ember.Application.create();
+var NVC = window.NVC = Ember.Application.create({
+    rootElement: '#main'
+});
 
 
 

@@ -3,7 +3,13 @@
 {% block javascripts %}
     {{ parent() }}
 
+    {#
+      Until AsseticBundle support ember-precompile, we just compile the templates with Grunt.
+      See https://github.com/symfony/AsseticBundle/pull/261 and
+      https://github.com/symfony/AsseticBundle/pull/187
+     #}
     {%  javascripts
+        '@BirkeNvcBundle/Resources/public/js/ember-templates.js'
         '@BirkeNvcBundle/Resources/scripts/*.js'
         '@BirkeNvcBundle/Resources/scripts/models/*.js'
     %}
