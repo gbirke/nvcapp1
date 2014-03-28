@@ -1,17 +1,24 @@
-NVC.IndexController = Ember.ArrayController.extend ({
+NVC.IndexController = Ember.Controller.extend ({
     search: '',
-
+    strategiesContent: Ember.A(),
+    needsContent: Ember.A(),
     actions: {
         query: function() {
-            var newContent = Ember.A();
+            var nContent = Ember.A(), sContent = Ember.A(), controller = this;
             $.post(Routing.generate('birke_nvc_search'), {q: this.get('search')}, function(data){
                 var i;
-                for(i=0;i<data.needs.length;i++) {
+                for(i=0;i < data.needs.length; i++) {
                     console.log("pushing need", data.needs[i]);
-                    newContent.pushObject(NVC.Need.createRecord(data.needs[i]));
+                    nContent.pushObject(NVC.Need.createRecord(data.needs[i]));
                 }
+
+                for(i=0; i < data.strategies.length; i++) {
+                    console.log("pushing strat", data.strategies[i]);
+                    sContent.pushObject(NVC.Strategy.createRecord(data.strategies[i]));
+                }
+                controller.set("strategiesContent", sContent);
+                controller.set("needsContent", nContent);
             }, 'json');
-            this.set("content", newContent);
         }
     }
 });

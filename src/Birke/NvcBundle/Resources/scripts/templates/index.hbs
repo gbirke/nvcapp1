@@ -2,8 +2,14 @@
 Suche:      {{input type="search" value=search action="query"}}
 
 <ul id="result-list">
-    {{#each}}
-        <li>
+    {{#each needsContent}}
+        <li class="need">
+            {{name}}
+        </li>
+    {{/each}}
+
+    {{#each strategiesContent}}
+        <li class="strategy">
             {{name}}
         </li>
     {{/each}}
