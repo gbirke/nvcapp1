@@ -1,6 +1,9 @@
 
 Suche:      {{input type="search" value=search action="query"}}
 
+{{#if isSearching}}Suche läuft ...{{/if}}
+
+
 <ul id="result-list">
     {{#each needsContent}}
         <li class="need">

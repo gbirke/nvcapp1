@@ -1,10 +1,12 @@
 NVC.IndexController = Ember.Controller.extend ({
     search: '',
+    isSearching: false,
     strategiesContent: Ember.A(),
     needsContent: Ember.A(),
     actions: {
         query: function() {
             var nContent = Ember.A(), sContent = Ember.A(), controller = this;
+            this.set("isSearching", true);
             $.post(Routing.generate('birke_nvc_search'), {q: this.get('search')}, function(data){
                 var i;
                 for(i=0;i < data.needs.length; i++) {
@@ -18,6 +20,7 @@ NVC.IndexController = Ember.Controller.extend ({
                 }
                 controller.set("strategiesContent", sContent);
                 controller.set("needsContent", nContent);
+                controller.set("isSearching", false);
             }, 'json');
         }
     }
