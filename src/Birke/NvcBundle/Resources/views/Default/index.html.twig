@@ -4,7 +4,9 @@
     {{ parent() }}
 
     {#
-      Until AsseticBundle support ember-precompile, we just compile the templates with Grunt.
+      Until AsseticBundle supports ember-precompile, we just compile the templates with Grunt.
+      The compiled template is put in '@BirkeNvcBundle/Resources/public/js/ember-templates.js'
+
       See https://github.com/symfony/AsseticBundle/pull/261 and
       https://github.com/symfony/AsseticBundle/pull/187
      #}

@@ -5,9 +5,11 @@
 
 
 <ul class="result-list">
-    {{#each needsContent}}
+    {{#each need in needsContent}}
         <li>
-            <a href="#" class="btn btn-lg need">{{name}}</a>
+            {{#link-to 'need' need classNames="btn btn-lg need"}}
+                {{need.name}}
+            {{/link-to}}
         </li>
     {{/each}}
 
