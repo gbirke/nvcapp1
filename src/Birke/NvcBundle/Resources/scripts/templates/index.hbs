@@ -1,0 +1,21 @@
+
+{{view NVC.SearchField label="Suche:" action="query" valueBinding="search" }}
+
+{{#if isSearching}}Suche läuft ...{{/if}}
+
+
+<ul class="result-list">
+    {{#each need in needsContent}}
+        <li>
+            {{#link-to 'need' need classNames="btn btn-lg need"}}
+                {{need.name}}
+            {{/link-to}}
+        </li>
+    {{/each}}
+
+    {{#each strategiesContent}}
+        <li>
+            <a href="#" class="btn btn-lg strategy">{{name}}</a>
+        </li>
+    {{/each}}
+</ul>

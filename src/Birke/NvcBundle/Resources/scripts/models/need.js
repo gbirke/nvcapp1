@@ -1,6 +1,4 @@
-define(['backbone'], function(Backbone){
-    var NeedModel = Backbone.Model.extend({
-
-    });
-    return NeedModel;
+NVC.Need = DS.Model.extend({
+    name: DS.attr('string')
 });
+

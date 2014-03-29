@@ -1,5 +1,28 @@
 {% extends "::base.html.twig" %}
 
+{% block javascripts %}
+    {{ parent() }}
+
+    {#
+      Until AsseticBundle supports ember-precompile, we just compile the templates with Grunt.
+      The compiled template is put in '@BirkeNvcBundle/Resources/public/js/ember-templates.js'
+
+      See https://github.com/symfony/AsseticBundle/pull/261 and
+      https://github.com/symfony/AsseticBundle/pull/187
+     #}
+    {%  javascripts
+        '@BirkeNvcBundle/Resources/public/js/ember-templates.js'
+        '@BirkeNvcBundle/Resources/scripts/*.js'
+        '@BirkeNvcBundle/Resources/scripts/models/*.js'
+        '@BirkeNvcBundle/Resources/scripts/controllers/*.js'
+        '@BirkeNvcBundle/Resources/scripts/views/*.js'
+    %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+{% endblock %}
+
+
 {% block body %}
 
 {% endblock %}
