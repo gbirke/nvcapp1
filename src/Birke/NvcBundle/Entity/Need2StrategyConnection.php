@@ -30,49 +30,49 @@ class Need2StrategyConnection
 
 
     /**
-     * @var \Doctrine\Common\Collections\ArrayCollection
+     * @var Need
      *
      * @ORM\ManyToOne(targetEntity="Need", inversedBy="strategyConnections")
      */
-    protected $needs;
+    protected $need;
 
     /**
-     * @var \Doctrine\Common\Collections\ArrayCollection
+     * @var Strategy
      *
      * @ORM\ManyToOne(targetEntity="Strategy", inversedBy="needConnections")
      */
-    protected $strategies;
+    protected $strategy;
 
     /**
-     * @param \Doctrine\Common\Collections\ArrayCollection $needs
+     * @param Need $need
      */
-    public function setNeeds($needs)
+    public function setNeed($need)
     {
-        $this->needs = $needs;
+        $this->need = $need;
     }
 
     /**
-     * @return \Doctrine\Common\Collections\ArrayCollection
+     * @return Need
      */
-    public function getNeeds()
+    public function getNeed()
     {
-        return $this->needs;
+        return $this->need;
     }
 
     /**
-     * @param \Doctrine\Common\Collections\ArrayCollection $strategies
+     * @param Strategy $strategy
      */
-    public function setStrategies($strategies)
+    public function setStrategy($strategy)
     {
-        $this->strategies = $strategies;
+        $this->strategy = $strategy;
     }
 
     /**
-     * @return \Doctrine\Common\Collections\ArrayCollection
+     * @return Strategy
      */
-    public function getStrategies()
+    public function getStrategy()
     {
-        return $this->strategies;
+        return $this->strategy;
     }
 
     /**

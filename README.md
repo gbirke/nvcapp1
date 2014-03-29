@@ -13,6 +13,7 @@ Bedürfnisse einzugeben und herauszufinden, welche Bedürfnisse mit einer Strate
   - Strategien auswählen (erzeugt Zuordnung, wenn noch nicht vorhanden, ansonsten erzeugt es eine "Vote")
 - Darstellung Strategien und Zuordnung von Bedürfnissen zur Strategie (s.o.)
 - Benutzerverwaltung
+  - Speichern, wer Strategien und Bedürfnisse erstellt hat (Zusatzfeld in Need und Strategy, unidirektionale Relation)
   - Anonyme Benutzer möglich
   - Graduelle Beteiligung
 - Individuelle Abstimmung (Vote) von Benutzern speichern
