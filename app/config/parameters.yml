@@ -15,3 +15,5 @@ parameters:
     secret: de1cdc1186d5a2f7418c9f3a9ebcc3d10
     database_path: null
 
+    jms_serializer.json_serialization_visitor.class: 'Birke\NvcBundle\Serialization\SideLoadJsonSerializationVisitor'
+
