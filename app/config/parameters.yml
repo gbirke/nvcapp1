@@ -16,4 +16,5 @@ parameters:
     database_path: null
 
     jms_serializer.json_serialization_visitor.class: 'Birke\NvcBundle\Serialization\SideLoadJsonSerializationVisitor'
+    jms_serializer.cache_naming_strategy.class: 'JMS\Serializer\Naming\IdenticalPropertyNamingStrategy'
 
