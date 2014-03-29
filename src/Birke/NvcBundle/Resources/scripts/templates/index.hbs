@@ -4,16 +4,16 @@
 {{#if isSearching}}Suche läuft ...{{/if}}
 
 
-<ul id="result-list">
+<ul class="result-list">
     {{#each needsContent}}
-        <li class="need">
-            {{name}}
+        <li>
+            <a href="#" class="btn btn-lg need">{{name}}</a>
         </li>
     {{/each}}
 
     {{#each strategiesContent}}
-        <li class="strategy">
-            {{name}}
+        <li>
+            <a href="#" class="btn btn-lg strategy">{{name}}</a>
         </li>
     {{/each}}
 </ul>
