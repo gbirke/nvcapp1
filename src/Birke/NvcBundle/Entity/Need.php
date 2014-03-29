@@ -32,7 +32,7 @@ class Need
     /**
      * @var ArrayCollection
      *
-     * @ORM\OneToMany(targetEntity="Need2StrategyConnection", mappedBy="need")
+     * @ORM\OneToMany(targetEntity="NeedToStrategyRelation", mappedBy="need")
      */
     private $strategyConnections;
 

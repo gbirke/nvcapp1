@@ -5,12 +5,12 @@ namespace Birke\NvcBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Birke\NvcBundle\Entity\Need2StrategyConnection
+ * Birke\NvcBundle\Entity\NeedToStrategyRelation
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Birke\NvcBundle\Repositories\Need2StrategyConnectionRepository")
+ * @ORM\Entity(repositoryClass="Birke\NvcBundle\Repositories\NeedToStrategyRelationRepository")
  */
-class Need2StrategyConnection
+class NeedToStrategyRelation
 {
     /**
      * @var integer $id
@@ -89,7 +89,7 @@ class Need2StrategyConnection
      * Set score
      *
      * @param integer $score
-     * @return Need2StrategyConnection
+     * @return NeedToStrategyRelation
      */
     public function setScore($score)
     {
