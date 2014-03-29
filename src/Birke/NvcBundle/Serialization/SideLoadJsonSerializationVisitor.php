@@ -72,7 +72,7 @@ class SideLoadJsonSerializationVisitor extends JsonSerializationVisitor {
         if (strpos($className, '\\') !== false) {
             $className = substr($className, strrpos($className, '\\') + 1);
         }
-        return strtolower(preg_replace(array('/(s|x)$/', '/y$/'), array('$1e', 'ie'), lcfirst($className))) . 's';
+        return preg_replace(array('/(s|x)$/', '/y$/'), array('$1e', 'ie'), lcfirst($className)) . 's';
     }
 
     protected function getSideDataId(ClassMetadata $metadata, $data) {
