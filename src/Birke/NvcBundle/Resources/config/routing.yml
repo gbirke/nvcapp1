@@ -7,3 +7,7 @@ birke_nvc_search:
     defaults: { _controller: BirkeNvcBundle:Default:search }
     requirements:
             _method:  POST
+
+needs:
+    type: rest
+    resource: Birke\NvcBundle\Controller\NeedsController

@@ -19,6 +19,7 @@ class AppKernel extends Kernel
 
             // Vendor Bundles
             new JMS\SerializerBundle\JMSSerializerBundle($this),
+            new FOS\RestBundle\FOSRestBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
 
             //My modules
