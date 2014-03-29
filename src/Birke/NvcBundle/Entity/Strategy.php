@@ -2,6 +2,7 @@
 
 namespace Birke\NvcBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -29,11 +30,17 @@ class Strategy
     private $name;
 
     /**
-     * @var Need2StrategyConnection
+     * @var ArrayCollection
      *
-     * @ORM\OneToMany(targetEntity="Need2StrategyConnection", mappedBy="strategies" )
+     * @ORM\OneToMany(targetEntity="NeedToStrategyRelation", mappedBy="strategy" )
      */
     private $needConnections;
+
+    function __construct()
+    {
+        $this->needConnections = new ArrayCollection();
+    }
+
 
     /**
      * Get id
@@ -69,7 +76,7 @@ class Strategy
     }
 
     /**
-     * @param \Birke\NvcBundle\Entity\Need2StrategyConnection $needConnections
+     * @param ArrayCollection $needConnections
      */
     public function setNeedConnections($needConnections)
     {
@@ -77,7 +84,7 @@ class Strategy
     }
 
     /**
-     * @return \Birke\NvcBundle\Entity\Need2StrategyConnection
+     * @return ArrayCollection
      */
     public function getNeedConnections()
     {

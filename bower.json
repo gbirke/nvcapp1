@@ -1,0 +1,26 @@
+{
+  "name": "nvcapp2",
+  "version": "0.0.0",
+  "homepage": "https://github.com/gbirke/nvcapp1",
+  "authors": [
+    "Gabriel Birke <gb@birke-software.de>"
+  ],
+  "description": "NVC App",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "GPL",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "web/js/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ember-data": "~1.0.0",
+    "ember": "~1.4.0"
+  }
+}

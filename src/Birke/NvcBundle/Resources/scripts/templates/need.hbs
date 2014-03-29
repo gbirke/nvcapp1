@@ -1,3 +1,9 @@
 <h1>{{name}}</h1>
 
-<p style="color:blue">TODO: Display strategies</p>
+<ul class="result-list">
+    {{#each strat in strategyConnections}}
+        <li>
+            <a href="#" class="btn strategy">{{strat.strategy.name}}</a>
+        </li>
+    {{/each}}
+</ul>
